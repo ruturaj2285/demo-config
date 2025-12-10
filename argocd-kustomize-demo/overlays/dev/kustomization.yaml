@@ -1,3 +1,11 @@
 resources:
-  - ../../k8s
-  - configmap-generator.yaml
+  - ../../base
+
+configMapGenerator:
+  - name: env-configs
+    behavior: create
+    literals:
+      - VERSION=random
+
+generatorOptions:
+  disableNameSuffixHash: false     # ❌ Hash enabled → ArgoCD triggers new RS on every sync

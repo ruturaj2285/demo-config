@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app
+  name: demo-app
 spec:
   replicas: 1
   selector:
@@ -13,8 +13,8 @@ spec:
         app: demo
     spec:
       containers:
-      - name: app
+      - name: demo
         image: nginx
         envFrom:
         - configMapRef:
-            name: PLACEHOLDER_WILL_CHANGE   # IMPORTANT
+            name: DYNAMIC_NAME_WILL_BE_REPLACED

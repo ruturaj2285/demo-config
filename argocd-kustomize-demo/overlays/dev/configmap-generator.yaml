@@ -2,6 +2,8 @@ configMapGenerator:
   - name: env-configs
     behavior: create
     literals:
-      - MESSAGE=Hello
+      - APP_MODE=dev
+      - MESSAGE=hello
+
 generatorOptions:
-  disableNameSuffixHash: false   # ❌ HASH ENABLED → ISSUE CREATED
+  disableNameSuffixHash: false   # ❌ HASH ENABLED (CAUSES NEW REPLICASETS EVERY SYNC)

@@ -1,0 +1,7 @@
+configMapGenerator:
+  - name: env-configs
+    behavior: create
+    literals:
+      - MESSAGE=Hello
+generatorOptions:
+  disableNameSuffixHash: false   # ❌ HASH ENABLED → ISSUE CREATED
